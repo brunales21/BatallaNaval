@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Tablero t = new Tablero();
+        Casilla c = new Casilla("~", Color.BLUE);
+        t.initTablero(c);
+        t.mostrarTablero();
     }
 }
