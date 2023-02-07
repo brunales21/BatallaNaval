@@ -8,8 +8,13 @@ public class Casilla {
         this.color = color;
     }
 
+    public Casilla() {
+
+    }
+
     @Override
     public String toString() {
-        return simbolo+color;
+        return color + simbolo;
     }
+
 }
