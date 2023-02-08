@@ -8,6 +8,10 @@ public class Casilla {
         this.color = color;
     }
 
+    public Casilla(String s) {
+        this.simbolo = s;
+    }
+
     public Casilla() {
 
     }
