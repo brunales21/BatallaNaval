@@ -7,13 +7,18 @@ public class JugadorBot extends Jugador {
     private final Barco barco = new Barco("* ", Color.PURPLE);
 
 
+    @Override
+    public Barco getBarco() {
+        return barco;
+    }
 
     @Override
-    public void lanzarBomba(Jugador jugador) {
+    public void lanzarBomba(Jugador jugador, Tablero comun) {
         int x = random.nextInt(10);
         int y = random.nextInt(10);
 
-        if (jugador.containsBarco(x, y)) {
+
+        if (jugador.getTablero()[x][y].equals(jugador.getBarco())) {
             System.out.println("tocado");
         }
         else {

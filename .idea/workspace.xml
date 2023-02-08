@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="176e6cc3-9235-411b-b6fb-60178a0c0625" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/JugadorBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JugadorHumano.java" afterDir="false" />
+    <list default="true" id="d7eee500-01d2-4bb6-b0b9-68356f40df9d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_10_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2023_10_28__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Barco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Barco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JugadorBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JugadorBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JugadorHumano.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JugadorHumano.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="176e6cc3-9235-411b-b6fb-60178a0c0625" name="Changes" comment="" />
+      <changelist id="d7eee500-01d2-4bb6-b0b9-68356f40df9d" name="Changes" comment="" />
       <created>1675683976502</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -105,5 +105,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/JugadorHumano.java</url>
+          <line>15</line>
+          <properties class="JugadorHumano" method="lanzarBomba">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

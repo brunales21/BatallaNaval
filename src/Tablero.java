@@ -15,6 +15,16 @@ public class Tablero {
         }
     }
 
+    public void mostrarTablero() {
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[0].length; j++) {
+                System.out.print(tablero[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
     public void setTablero(Casilla c, int x, int y) {
         tablero[x][y] = c;
     }

@@ -1,0 +1,57 @@
+Index: src/Jugador.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Random;\r\nimport java.util.Scanner;\r\n\r\npublic class Jugador {\r\n\r\n    private Random barcoOrdena = new Random();\r\n    private Scanner sc = new Scanner(System.in);\r\n    private Casilla[][] tablero;\r\n    private boolean esHumano;\r\n\r\n\r\n    public Casilla[][] getTablero() {\r\n        return tablero;\r\n    }\r\n\r\n    public Jugador() {\r\n        tablero = new Tablero().getTablero();\r\n    }\r\n    public Jugador(boolean esHumano) {\r\n        this.esHumano=esHumano;\r\n        tablero = new Tablero().getTablero();\r\n    }\r\n\r\n    public void colocarBarcos() {\r\n        int indice=5;\r\n        if (esHumano == true) {\r\n\r\n            for (int i = 0; i < 5; i++) {\r\n                int x = sc.nextInt();\r\n                int y = sc.nextInt();\r\n                tablero[x][y] = Barco.getBarco();\r\n            }\r\n        }else{\r\n            while (indice>0){\r\n\r\n                int x = barcoOrdena.nextInt(10);\r\n                int y = barcoOrdena.nextInt(10);\r\n\r\n                if (tablero[x][y].equals(Barco.getBarcoMachine()) || tablero[x][y].equals(Barco.getBarco())) {\r\n\r\n                }else {\r\n                    tablero[x][y] = Barco.getBarcoMachine();\r\n                    indice--;\r\n                }\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    public  void lanzamiento (Casilla [][] tableroComun, Jugador [][] j1, Jugador [][] j2 ){\r\n        if (esHumano){\r\n            int x = sc.nextInt();\r\n            int y = sc.nextInt();\r\n\r\n           if (j2[x][y].equals(Barco.getBarcoMachine())){\r\n                System.out.println(\"Tocado\");\r\n                tableroComun[x][y]= Barco.getLanzamientoHumanoAcertadoGet();\r\n\r\n            }else {\r\n               System.out.println(\"Agua\");\r\n               tableroComun[x][y]=Barco.getLanzamientoHumanoFallidoGet();\r\n           }\r\n        }\r\n    }\r\n\r\n    public void mostrarTablero() {\r\n        for (int i = 0; i < tablero.length; i++) {\r\n            for (int j = 0; j < tablero[0].length; j++) {\r\n                System.out.print(tablero[i][j]);\r\n            }\r\n            System.out.println();\r\n        }\r\n        System.out.println();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Jugador.java b/src/Jugador.java
+--- a/src/Jugador.java	(revision 2bb278e13b81bdd5dddec8e3a293121e03a8baab)
++++ b/src/Jugador.java	(date 1675859404272)
+@@ -47,16 +47,16 @@
+         }
+     }
+ 
+-    public  void lanzamiento (Casilla [][] tableroComun, Jugador [][] j1, Jugador [][] j2 ){
++    public  void lanzamiento (Casilla [][] tableroComun, Jugador j1, Jugador j2 ){
+         if (esHumano){
+             int x = sc.nextInt();
+             int y = sc.nextInt();
+ 
+-           if (j2[x][y].equals(Barco.getBarcoMachine())){
++           if (j1.getTablero()[x][y].equals(Barco.getBarcoMachine())){
+                 System.out.println("Tocado");
+                 tableroComun[x][y]= Barco.getLanzamientoHumanoAcertadoGet();
+ 
+-            }else {
++           }else {
+                System.out.println("Agua");
+                tableroComun[x][y]=Barco.getLanzamientoHumanoFallidoGet();
+            }
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Random;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        Jugador bru = new Jugador(true);\r\n        Jugador mach = new Jugador(false);\r\n\r\n        bru.mostrarTablero();\r\n        bru.colocarBarcos();\r\n        bru.mostrarTablero();\r\n\r\n        mach.colocarBarcos();\r\n        mach.mostrarTablero();\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 2bb278e13b81bdd5dddec8e3a293121e03a8baab)
++++ b/src/Main.java	(date 1675850628211)
+@@ -5,6 +5,7 @@
+ 
+         Jugador bru = new Jugador(true);
+         Jugador mach = new Jugador(false);
++        Casilla tablerocomun = new Casilla();
+ 
+         bru.mostrarTablero();
+         bru.colocarBarcos();
+@@ -12,7 +13,7 @@
+ 
+         mach.colocarBarcos();
+         mach.mostrarTablero();
+-
++        bru.lanzamiento(tablerocomun,bru, mach);
+ 
+ 
+     }

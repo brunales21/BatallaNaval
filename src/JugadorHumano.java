@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class JugadorHumano extends Jugador {
 
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     private final Barco barco = new Barco("* ", Color.RED);
 
     private static final  Barco lanzamientoHumanoAcertado = new Barco("X ",Color.RED);
@@ -10,16 +10,21 @@ public class JugadorHumano extends Jugador {
     private static final  Barco lanzamientoHumanoFallido = new Barco("X ",Color.BLACK_BRIGHT);
 
 
+
+
     @Override
-    public void lanzarBomba(Jugador jugador) {
+    public void lanzarBomba(Jugador jugador, Tablero comun) {
         int x = sc.nextInt();
         int y = sc.nextInt();
 
-        if (jugador.containsBarco(x, y)) {
+        if (jugador.getTablero()[x][y].equals(jugador.getBarco())) {
             System.out.println("tocado");
+            comun.getTablero()[x][y]=lanzamientoHumanoAcertado;
         }
         else {
             System.out.println("agua");
+            comun.getTablero()[x][y]=lanzamientoHumanoFallido;
+
         }
 
     }

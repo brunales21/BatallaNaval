@@ -9,7 +9,8 @@ public abstract class Jugador {
         barco = new Barco("*", Color.RED);
     }
 
-    public abstract void lanzarBomba(Jugador jugador);
+
+    public abstract void lanzarBomba(Jugador jugador, Tablero comun);
 
     public abstract void colocarBarcos();
     public Casilla[][] getTablero() {
