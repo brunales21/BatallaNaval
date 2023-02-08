@@ -1,66 +1,27 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Jugador {
-
-    private Random barcoOrdena = new Random();
-    private Scanner sc = new Scanner(System.in);
+public abstract class Jugador {
+    private Barco barco;
     private Casilla[][] tablero;
-    private boolean esHumano;
+    public Jugador() {
+        tablero = new Tablero().getTablero();
+        barco = new Barco("*", Color.RED);
+    }
 
+    public abstract void lanzarBomba(Jugador jugador);
 
+    public abstract void colocarBarcos();
     public Casilla[][] getTablero() {
         return tablero;
     }
 
-    public Jugador() {
-        tablero = new Tablero().getTablero();
-    }
-    public Jugador(boolean esHumano) {
-        this.esHumano=esHumano;
-        tablero = new Tablero().getTablero();
+    public void setTablero(Casilla c, int x, int y) {
+        tablero[x][y] = c;
     }
 
-    public void colocarBarcos() {
-        int indice=5;
-        if (esHumano == true) {
-
-            for (int i = 0; i < 5; i++) {
-                int x = sc.nextInt();
-                int y = sc.nextInt();
-                tablero[x][y] = Barco.getBarco();
-            }
-        }else{
-            while (indice>0){
-
-                int x = barcoOrdena.nextInt(10);
-                int y = barcoOrdena.nextInt(10);
-
-                if (tablero[x][y].equals(Barco.getBarcoMachine()) || tablero[x][y].equals(Barco.getBarco())) {
-
-                }else {
-                    tablero[x][y] = Barco.getBarcoMachine();
-                    indice--;
-                }
-            }
-
-        }
-    }
-
-    public  void lanzamiento (Casilla [][] tableroComun, Jugador [][] j1, Jugador [][] j2 ){
-        if (esHumano){
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-
-           if (j2[x][y].equals(Barco.getBarcoMachine())){
-                System.out.println("Tocado");
-                tableroComun[x][y]= Barco.getLanzamientoHumanoAcertadoGet();
-
-            }else {
-               System.out.println("Agua");
-               tableroComun[x][y]=Barco.getLanzamientoHumanoFallidoGet();
-           }
-        }
+    public Barco getBarco() {
+        return barco;
     }
 
     public void mostrarTablero() {
@@ -71,5 +32,9 @@ public class Jugador {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public boolean containsBarco(int x, int y) {
+        return barco.equals(tablero[x][y]);
     }
 }

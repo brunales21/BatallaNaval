@@ -2,16 +2,19 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        Jugador jh = new JugadorHumano();
+        Jugador jb = new JugadorBot();
 
-        Jugador bru = new Jugador(true);
-        Jugador mach = new Jugador(false);
+        jh.colocarBarcos();
+        jb.colocarBarcos();
 
-        bru.mostrarTablero();
-        bru.colocarBarcos();
-        bru.mostrarTablero();
+        jh.mostrarTablero();
+        jb.mostrarTablero();
 
-        mach.colocarBarcos();
-        mach.mostrarTablero();
+        jh.lanzarBomba(jb);
+        jb.lanzarBomba(jh);
+
+
 
 
 

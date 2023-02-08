@@ -15,15 +15,14 @@ public class Tablero {
         }
     }
 
+    public void setTablero(Casilla c, int x, int y) {
+        tablero[x][y] = c;
+    }
+
     public Casilla[][] getTablero() {
         return tablero;
     }
 
-    public static void setAgua() {
-        Tablero.agua =agua;
-    }
 
-    public Casilla getAgua() {
-        return agua;
-    }
+
 }
