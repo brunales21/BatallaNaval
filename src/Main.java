@@ -1,31 +1,27 @@
 import java.util.Random;
 
-        public class Main {
-            public static void main(String[] args) {
-                Tablero comun= new Tablero();
-                Jugador jh = new JugadorHumano();
-                Jugador jb = new JugadorBot();
+public class Main {
+    public static void main(String[] args) {
 
-                jh.colocarBarcos();
-                jb.colocarBarcos();
+        FabricaDeBarcos fdb = new FabricaDeBarcos();
 
-                jh.mostrarTablero();
-                jb.mostrarTablero();
+        Jugador jh = new JugadorHumano(fdb.getNewBarcos());
+        Jugador jb = new JugadorBot(fdb.getNewBarcos());
 
-                jh.lanzarBomba(jb,comun);
-                jb.lanzarBomba(jh,comun);
+        jh.colocarBarcos();
+        jb.colocarBarcos();
 
-                comun.mostrarTablero();
+        jh.mostrarTablero();
+        jb.mostrarTablero();
 
-
-
-
-
-            }
+        jh.lanzarBomba(jb);
+        jb.lanzarBomba(jh);
 
 
 
 
-        }
+
+    }
 
 
+}

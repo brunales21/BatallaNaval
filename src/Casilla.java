@@ -1,24 +1,23 @@
 public class Casilla {
-    private String simbolo;
-
-    private String color;
-
-    public Casilla(String simbolo, String color) {
-        this.simbolo = simbolo;
-        this.color = color;
-    }
-
-    public Casilla(String s) {
-        this.simbolo = s;
-    }
+    private Barco barco = null;
 
     public Casilla() {
 
     }
 
+    public Casilla(Barco barco) {
+        this.barco = barco;
+    }
+
+    public boolean isBarco() {
+        return this.barco != null;
+    }
     @Override
     public String toString() {
-        return color + simbolo;
+        if (barco == null) {
+            return Color.BLUE+"~ ";
+        }
+        return barco.toString();
     }
 
 }

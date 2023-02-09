@@ -2,29 +2,23 @@ import java.util.Scanner;
 
 public class JugadorHumano extends Jugador {
 
-    private final Scanner sc = new Scanner(System.in);
-    private final Barco barco = new Barco("* ", Color.RED);
+    private Scanner sc = new Scanner(System.in);
 
-    private static final  Barco lanzamientoHumanoAcertado = new Barco("X ",Color.RED);
-
-    private static final  Barco lanzamientoHumanoFallido = new Barco("X ",Color.BLACK_BRIGHT);
-
-
+    public JugadorHumano(Barco[] barcos) {
+        super(barcos);
+    }
 
 
     @Override
-    public void lanzarBomba(Jugador jugador, Tablero comun) {
+    public void lanzarBomba(Jugador jugador) {
         int x = sc.nextInt();
         int y = sc.nextInt();
 
-        if (jugador.getTablero()[x][y].equals(jugador.getBarco())) {
+        if (jugador.containsBarcoAtPos(x, y)) {
             System.out.println("tocado");
-            comun.getTablero()[x][y]=lanzamientoHumanoAcertado;
         }
         else {
             System.out.println("agua");
-            comun.getTablero()[x][y]=lanzamientoHumanoFallido;
-
         }
 
     }
@@ -34,7 +28,7 @@ public class JugadorHumano extends Jugador {
         for (int i = 0; i < 5; i++) {
             int x = sc.nextInt();
             int y = sc.nextInt();
-            getTablero()[x][y] = barco;
+            getTablero()[x][y] = new Casilla(super.getBarcos()[i]);
         }
 
     }

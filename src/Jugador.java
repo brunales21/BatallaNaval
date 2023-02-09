@@ -1,16 +1,12 @@
-import java.util.Random;
-import java.util.Scanner;
-
 public abstract class Jugador {
-    private Barco barco;
+    private Barco[] barcos;
     private Casilla[][] tablero;
-    public Jugador() {
+    public Jugador(Barco[] barcos) {
         tablero = new Tablero().getTablero();
-        barco = new Barco("*", Color.RED);
+        this.barcos = barcos;
     }
 
-
-    public abstract void lanzarBomba(Jugador jugador, Tablero comun);
+    public abstract void lanzarBomba(Jugador jugador);
 
     public abstract void colocarBarcos();
     public Casilla[][] getTablero() {
@@ -21,8 +17,8 @@ public abstract class Jugador {
         tablero[x][y] = c;
     }
 
-    public Barco getBarco() {
-        return barco;
+    public Barco[] getBarcos() {
+        return barcos;
     }
 
     public void mostrarTablero() {
@@ -35,7 +31,9 @@ public abstract class Jugador {
         System.out.println();
     }
 
-    public boolean containsBarco(int x, int y) {
-        return barco.equals(tablero[x][y]);
+    public boolean containsBarcoAtPos(int x, int y) {
+        return tablero[x][y].isBarco();
     }
+
+
 }
