@@ -10,15 +10,8 @@ public class Barco {
 
     @Override
     public String toString() {
-        return simbolo+color;
+        return color+simbolo;
     }
-/*
-    public static Barco getLanzamientoHumanoAcertadoGet() {
-        return lanzamientoHumanoAcertado;
-    }
-    public static Barco getLanzamientoHumanoFallidoGet() {
-        return lanzamientoHumanoFallido;
-    }
- */
+
 
 }

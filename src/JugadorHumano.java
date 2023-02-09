@@ -10,15 +10,19 @@ public class JugadorHumano extends Jugador {
 
 
     @Override
-    public void lanzarBomba(Jugador jugador) {
-        int x = sc.nextInt();
-        int y = sc.nextInt();
+    public void lanzarBomba(Jugador jugadorBot) {
 
-        if (jugador.containsBarcoAtPos(x, y)) {
-            System.out.println("tocado");
+        String coordenadas = sc.nextLine().replaceAll(" ", "");
+        int x = Integer.parseInt(coordenadas.charAt(0)+"");
+        int y = Integer.parseInt(coordenadas.charAt(1)+"");
+
+        if (jugadorBot.containsBarcoAtPos(x, y)) {
+            jugadorBot.setTablero(new Casilla(new Barco("* ", Color.RED)), x, y);
+            //System.out.println("tocado");
         }
         else {
-            System.out.println("agua");
+            jugadorBot.setTablero(new Casilla(Casilla.SIMBOLO_AGUATOCADA, Color.BLUE), x, y);
+            //System.out.println("aguas");
         }
 
     }
@@ -26,10 +30,12 @@ public class JugadorHumano extends Jugador {
     @Override
     public void colocarBarcos() {
         for (int i = 0; i < 5; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-            getTablero()[x][y] = new Casilla(super.getBarcos()[i]);
+            String coordenadas = sc.nextLine().replaceAll(" ", "");
+            int x = Integer.parseInt(coordenadas.charAt(0)+"");
+            int y = Integer.parseInt(coordenadas.charAt(1)+"");
+            setTablero2(new Casilla(super.getBarcos()[i]), x, y);
         }
-
     }
+
+
 }

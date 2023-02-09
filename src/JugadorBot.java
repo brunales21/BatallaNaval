@@ -10,15 +10,17 @@ public class JugadorBot extends Jugador {
 
 
     @Override
-    public void lanzarBomba(Jugador jugador) {
+    public void lanzarBomba(Jugador jugadorHumano) {
         int x = random.nextInt(10);
         int y = random.nextInt(10);
 
-        if (jugador.containsBarcoAtPos(x, y)) {
-            System.out.println("tocado");
+        if (jugadorHumano.containsBarcoAtPos(x, y)) {
+            jugadorHumano.setTablero2(new Casilla(new Barco("* ", Color.RED)), x, y);
+            //System.out.println("tocado");
         }
         else {
-            System.out.println("agua");
+            jugadorHumano.setTablero2(new Casilla(Casilla.SIMBOLO_AGUATOCADA, Color.BLUE), x, y);
+            //System.out.println("aguas");
         }
     }
 
@@ -32,7 +34,7 @@ public class JugadorBot extends Jugador {
             x = random.nextInt(10);
             y = random.nextInt(10);
             if (!containsBarcoAtPos(x, y)) {
-                setTablero(new Casilla(super.getBarcos()[contadorBarcos]), x, y);
+                setTablero2(new Casilla(super.getBarcos()[contadorBarcos]), x, y);
                 contadorBarcos++;
             }
         } while(contadorBarcos<5);
