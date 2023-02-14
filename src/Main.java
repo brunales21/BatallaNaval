@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+
+
         cleanConsole();
         FabricaDeBarcos fdb = new FabricaDeBarcos();
 
@@ -23,6 +25,8 @@ public class Main {
             sleep(1);
 
         } while (true);
+
+
 
     }
 
@@ -52,6 +56,9 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+
+    
 
 
 }

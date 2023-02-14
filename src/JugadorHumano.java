@@ -9,12 +9,13 @@ public class JugadorHumano extends Jugador {
     }
 
 
+
     @Override
     public void lanzarBomba(Jugador jugadorBot) {
 
         String coordenadas = sc.nextLine().replaceAll(" ", "");
         int x = Integer.parseInt(coordenadas.charAt(0)+"");
-        int y = Integer.parseInt(coordenadas.charAt(1)+"");
+        int y = coordenadas.charAt(1)-65;
 
         if (jugadorBot.containsBarcoAtPos(x, y)) {
             jugadorBot.setTablero(new Casilla(new Barco("* ", Color.RED)), x, y);

@@ -1,5 +1,6 @@
 public class Barco {
     private String simbolo;
+    private Casilla[][] barco;
     private String color;
 
 

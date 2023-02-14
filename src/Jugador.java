@@ -34,23 +34,37 @@ public abstract class Jugador {
     }
 
     public void mostrarTablero() {
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[0].length; j++) {
-                System.out.print(tablero[i][j]);
+        char[] letras = Coordenada.getLetras();
+        int[] numeros = Coordenada.getNumeros();
+        System.out.print(" ");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(" "+letras[i]+" ");
+        }
+        System.out.println();
+        for (int i = 0; i < 10; i++) {
+            System.out.print(Color.RESET+numeros[i]);
+            for (int j = 0; j < tablero.length; j++) {
+                System.out.print(" "+tablero[i][j]);
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     public void mostrarTablero2() {
-        for (int i = 0; i < tablero2.length; i++) {
-            for (int j = 0; j < tablero2[0].length; j++) {
-                System.out.print(tablero2[i][j]);
+        char[] letras = Coordenada.getLetras();
+        int[] numeros = Coordenada.getNumeros();
+        System.out.print(" ");
+        for (int i = 0; i < 10; i++) {
+            System.out.print(" "+Color.RESET+letras[i]+" ");
+        }
+        System.out.println();
+        for (int i = 0; i < 10; i++) {
+            System.out.print(Color.RESET+numeros[i]);
+            for (int j = 0; j < tablero2.length; j++) {
+                System.out.print(" "+tablero2[i][j]);
             }
             System.out.println();
         }
-        System.out.println();
     }
 
 
