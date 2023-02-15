@@ -9,7 +9,6 @@ public class JugadorHumano extends Jugador {
     }
 
 
-
     @Override
     public void lanzarBomba(Jugador jugadorBot) {
 
@@ -18,14 +17,13 @@ public class JugadorHumano extends Jugador {
         int y = coordenadas.charAt(1)-65;
 
         if (jugadorBot.containsBarcoAtPos(x, y)) {
-            jugadorBot.setTablero(new Casilla(new Barco("* ", Color.RED)), x, y);
+            jugadorBot.setTablero(new Casilla(new Barco()), x, y);
             //System.out.println("tocado");
         }
         else {
             jugadorBot.setTablero(new Casilla(Casilla.SIMBOLO_AGUATOCADA, Color.BLUE), x, y);
             //System.out.println("aguas");
         }
-
     }
 
     @Override

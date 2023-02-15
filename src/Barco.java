@@ -1,10 +1,10 @@
 public class Barco {
-    private String simbolo;
     private Casilla[][] barco;
-    private String color;
+    private String simbolo = "* ";
+    private String color = Color.PURPLE;
 
 
-    public Barco(String simbolo, String color) {
+    public Barco() {
         this.simbolo = simbolo;
         this.color = color;
     }

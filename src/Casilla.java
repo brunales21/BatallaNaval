@@ -1,25 +1,20 @@
 public class Casilla {
     private Barco barco = null;
+    private String color;
+    private String simbolo;
 
     static final String COLOR_AGUA = Color.BLUE;
     static final String SIMBOLO_AGUA = "~ ";
     static final String SIMBOLO_AGUATOCADA = "O ";
 
-
-    private String color;
-    private String simbolo;
-
-    public Casilla() {
-
-    }
-
     public Casilla(String simbolo, String color) {
         this.simbolo = simbolo;
         this.color = color;
-
     }
-
-
+    public Casilla() {
+        this.simbolo = SIMBOLO_AGUA;
+        this.color = Color.BLUE;
+    }
 
     public Casilla(Barco barco) {
         this.barco = barco;

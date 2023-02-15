@@ -15,7 +15,7 @@ public class JugadorBot extends Jugador {
         int y = random.nextInt(10);
 
         if (jugadorHumano.containsBarcoAtPos(x, y)) {
-            jugadorHumano.setTablero2(new Casilla(new Barco("* ", Color.RED)), x, y);
+            jugadorHumano.setTablero2(new Casilla(new Barco()), x, y);
             //System.out.println("tocado");
         }
         else {

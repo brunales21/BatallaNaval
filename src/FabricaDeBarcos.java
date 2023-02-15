@@ -13,7 +13,7 @@ public class FabricaDeBarcos {
     public Barco[] getNewBarcos() {
         Barco[] barcos = new Barco[CANTIDAD_BARCOS];
         for (int i = 0; i < barcos.length; i++) {
-            barcos[i] = new Barco("+ ", Color.PURPLE_BOLD);
+            barcos[i] = new Barco();
         }
         return barcos;
     }
