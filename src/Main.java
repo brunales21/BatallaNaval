@@ -18,16 +18,12 @@ public class Main {
             jb.mostrarTablero();
             jh.mostrarTablero2();
 
-
             jh.lanzarBomba(jb);
             jb.lanzarBomba(jh);
 
             sleep(1);
 
         } while (true);
-
-
-
     }
 
     public static void clearConsole() {

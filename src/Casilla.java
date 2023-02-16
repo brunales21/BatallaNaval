@@ -1,15 +1,20 @@
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
 public class Casilla {
     private Barco barco = null;
     private String color;
     private String simbolo;
-
-    static final String COLOR_AGUA = Color.BLUE;
     static final String SIMBOLO_AGUA = "~ ";
     static final String SIMBOLO_AGUATOCADA = "O ";
 
-    public Casilla(String simbolo, String color) {
-        this.simbolo = simbolo;
-        this.color = color;
+    public Casilla(boolean damaged) {
+        if (damaged){
+            this.simbolo = SIMBOLO_AGUATOCADA;
+        } else {
+            this.simbolo = SIMBOLO_AGUA;
+        }
+        this.color = Color.BLUE;
+
     }
     public Casilla() {
         this.simbolo = SIMBOLO_AGUA;

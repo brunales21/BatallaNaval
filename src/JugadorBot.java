@@ -15,11 +15,11 @@ public class JugadorBot extends Jugador {
         int y = random.nextInt(10);
 
         if (jugadorHumano.containsBarcoAtPos(x, y)) {
-            jugadorHumano.setTablero2(new Casilla(new Barco()), x, y);
+            jugadorHumano.setTablero2(new Casilla(new Barco(true)), x, y);
             //System.out.println("tocado");
         }
         else {
-            jugadorHumano.setTablero2(new Casilla(Casilla.SIMBOLO_AGUATOCADA, Color.BLUE), x, y);
+            jugadorHumano.setTablero2(new Casilla(true), x, y);
             //System.out.println("aguas");
         }
     }

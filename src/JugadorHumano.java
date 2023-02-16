@@ -17,11 +17,11 @@ public class JugadorHumano extends Jugador {
         int y = coordenadas.charAt(1)-65;
 
         if (jugadorBot.containsBarcoAtPos(x, y)) {
-            jugadorBot.setTablero(new Casilla(new Barco()), x, y);
+            jugadorBot.setTablero(new Casilla(new Barco(true)), x, y);
             //System.out.println("tocado");
         }
         else {
-            jugadorBot.setTablero(new Casilla(Casilla.SIMBOLO_AGUATOCADA, Color.BLUE), x, y);
+            jugadorBot.setTablero(new Casilla(true), x, y);
             //System.out.println("aguas");
         }
     }

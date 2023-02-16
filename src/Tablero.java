@@ -15,7 +15,7 @@ public class Tablero {
     public void initTablero() {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[0].length; j++) {
-                tablero[i][j] = new Casilla("~ ", Color.BLUE);
+                tablero[i][j] = new Casilla();
             }
         }
     }
@@ -23,7 +23,7 @@ public class Tablero {
     public void initTablero2() {
         for (int i = 0; i < tablero2.length; i++) {
             for (int j = 0; j < tablero2[0].length; j++) {
-                tablero2[i][j] = new Casilla("~ ", Color.BLUE);
+                tablero2[i][j] = new Casilla();
             }
         }
     }
